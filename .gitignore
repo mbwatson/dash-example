@@ -1,8 +1,10 @@
 *.ipynb_notebooks
 *.ipynb
 
+data/
 ignore
 *.csv
+*.parquet
 *.log
 .DS_Store
 
