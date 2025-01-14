@@ -1,5 +1,11 @@
-from dash import Dash, dcc, html
+from dash import Dash, dash_table, dcc, html
 import dash_bootstrap_components as dbc
+
+import pandas as pd
+import plotly.express as px
+
+# read data
+df = pd.read_csv('./data/sample-data.csv')
 
 CONFIG = {
   "MAX_WIDTH": "1600px",
@@ -40,6 +46,8 @@ def create_layout(app: Dash) -> html.Div:
           Labore non consequat deserunt proident laborum consectetur eu anim ut
           non incididunt laborum.
         """),
-      ])
+      ]),
+      dcc.Graph(figure=px.histogram(df, x='target_end_date', y='value')),
+      dash_table.DataTable(data=df.to_dict('records'), page_size=20),
     ]
   )
