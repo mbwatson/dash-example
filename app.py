@@ -4,10 +4,6 @@ import dash_bootstrap_components as dbc
 from src.components.navbar import navbar
 from src.pages import home, about, contact
 from src.theme import DEFAULT_THEME
-import os
-
-
-assets_path = os.getcwd() +'/src/assets'
 
 app = Dash()
 app.title = 'Dash Dashboard'
