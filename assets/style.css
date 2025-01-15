@@ -17,10 +17,12 @@
   }
   .navbar--menu {
     flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  #color-scheme-toggle {
-    margin: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 1rem;
+    .navbar--menu-items {
+      display: flex;
+    }
   }
 }
