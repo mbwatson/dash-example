@@ -1,0 +1,21 @@
+.navbar {
+  width: 100%;
+  display: flex;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: no-wrap;
+    .navbar--brand {
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+      font-size: 150%;
+      &:hover: {
+        text-decoration: underline;
+      }
+    }
+    .navbar--menu {
+      margin-right: 1rem;
+    }
+}
