@@ -6,7 +6,8 @@ name = "pypi"
 [packages]
 dash = "*"
 dash-bootstrap-components = "*"
-pandas = "*"
+dash-mantine-components = "*"
+dash-iconify = "*"
 
 [dev-packages]
 
