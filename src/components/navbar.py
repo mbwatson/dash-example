@@ -2,6 +2,7 @@ from dash import html
 import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
 from src.components.drawer import drawer
+from src.components.theme_toggle import theme_toggle
 
 logo = dmc.Anchor(
   "[LOGO]",
@@ -18,10 +19,11 @@ nav_items = [
   {"label": "Contact", "href": "/contact"},
 ]
 
-menu = dmc.Group(
+menu = dmc.Flex(
   [navlink(label=item["label"], href=item["href"]) for item in nav_items],
   wrap="no-wrap",
   className="navbar--menu",
+  justify="flex-end"
 )
 
 navbar = dmc.Paper(
@@ -30,7 +32,7 @@ navbar = dmc.Paper(
   children=[
     drawer,
     logo,
-    menu,
+    dmc.Flex([menu, theme_toggle])
   ],
 )
 

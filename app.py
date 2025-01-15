@@ -6,12 +6,14 @@ from src.pages import home, about, contact
 from src.theme import DEFAULT_THEME
 import os
 
+
 assets_path = os.getcwd() +'/src/assets'
 
 app = Dash()
 app.title = 'Dash Dashboard'
 app.layout = dmc.MantineProvider(
   theme=DEFAULT_THEME,
+  id="mantine-provider",
   children=html.Div([
     dcc.Location(id='url', refresh=False),
     navbar,
