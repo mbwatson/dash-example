@@ -8,9 +8,9 @@ dash = "*"
 dash-bootstrap-components = "*"
 dash-mantine-components = "*"
 dash-iconify = "*"
-python-dotenv = "*"
 
 [dev-packages]
+python-dotenv = "*"
 
 [requires]
 python_version = "3.12"

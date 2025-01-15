@@ -2,10 +2,15 @@
 
 ## 🚧 Development
 
+
 1. clone this repo & move into project dir
 2. start virtual environment, `pipenv shell` ([Pipenv](https://pipenv.pypa.io/en/latest/) or other virtualenv management tool)
 3. install deps, `pipenv install`
-4. start dev server, `python app.py`
+4. create and `.env` file with the following contents:
+```
+REACT_VERSION=18.2.0
+```
+5. start dev server, `python app.py`
 
 ```bash
 $ python app.py
