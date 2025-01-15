@@ -24,6 +24,7 @@ def navlink(label, href):
 
 nav_items = [
   {"label": "Home", "href": "/"},
+  {"label": "Data", "href": "/data"},
   {"label": "About", "href": "/about"},
   {"label": "Contact", "href": "/contact"},
 ]

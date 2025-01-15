@@ -2,7 +2,7 @@ from dash import Dash, dcc, html, Input, Output
 import dash_mantine_components as dmc
 import dash_bootstrap_components as dbc
 from src.components.navbar import navbar
-from src.pages import home, about, contact
+from src.pages import home, about, contact, data
 from src.theme import DEFAULT_THEME
 
 app = Dash()
@@ -27,6 +27,8 @@ def display_page(pathname):
     return about.create_page()
   if pathname == '/contact':
     return contact.create_page()
+  if pathname == '/data':
+    return data.create_page()
   else:
     return home.create_page()
 
