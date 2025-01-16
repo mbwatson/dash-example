@@ -10,7 +10,6 @@ dash-mantine-components = "*"
 dash-iconify = "*"
 
 [dev-packages]
-python-dotenv = "*"
 
 [requires]
 python_version = "3.12"

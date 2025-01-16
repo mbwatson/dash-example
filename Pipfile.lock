@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8ca54c1907abe7c5d22230f94d544e954d5bfe419e2e446a774c0911be339aaa"
+            "sha256": "733fdf6e77a27b5bce00f6691d25869b0cf6969ae89e28cf288dc16cbfbf8547"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -149,12 +149,12 @@
         },
         "dash-bootstrap-components": {
             "hashes": [
-                "sha256:960a1ec9397574792f49a8241024fa3cecde0f5930c971a3fc81f016cbeb1095",
-                "sha256:97f0f47b38363f18863e1b247462229266ce12e1e171cfb34d3c9898e6e5cd1e"
+                "sha256:33c76777e0359637e273ae10fba5f88644f3f4e6cd461b44bc9ad212632e28c4",
+                "sha256:9361f8ee4ba5e0a1d4d5785da3d9f12ba478cc54b5d8f8792a176a49b46feb2f"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8' and python_version < '4'",
-            "version": "==1.6.0"
+            "markers": "python_version >= '3.9' and python_version < '4'",
+            "version": "==1.7.0"
         },
         "dash-core-components": {
             "hashes": [
@@ -396,15 +396,5 @@
             "version": "==3.21.0"
         }
     },
-    "develop": {
-        "python-dotenv": {
-            "hashes": [
-                "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca",
-                "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==1.0.1"
-        }
-    }
+    "develop": {}
 }
