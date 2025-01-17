@@ -1,7 +1,7 @@
 from dash import Dash, _dash_renderer, dcc, Input, Output, State, callback, clientside_callback
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
-from src.pages import home, about, contact, data, not_found
+from src.pages import home, about, contact, data_csv, data_parquet, not_found
 from src.components.layout import layout
 from src.theme import DEFAULT_THEME
 
@@ -28,8 +28,10 @@ def display_page(pathname):
     return about.layout
   if pathname == '/contact':
     return contact.layout
-  if pathname == '/data':
-    return data.layout
+  if pathname == '/data-csv':
+    return data_csv.layout
+  if pathname == '/data-parquet':
+    return data_parquet.layout
   if pathname == '/':
     return home.layout
   else:
