@@ -3,7 +3,7 @@ import dash_mantine_components as dmc
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv('./data/data-goldstandard/rsvnet_hospitalization.csv')
+df = pd.read_csv('./data/data-goldstandard/rsvnet_hospitalization_us_only.csv')
 
 header = html.H1('Data')
 
