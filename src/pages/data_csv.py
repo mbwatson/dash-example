@@ -7,7 +7,7 @@ df = pd.read_csv('./data/data-goldstandard/rsvnet_hospitalization_us_only.csv')
 
 header = html.H1('Data CSV')
 
-chart = dcc.Graph(figure=px.histogram(df, x='date', y='value'), id="my-plot")
+chart = dcc.Graph(figure=px.histogram(df, x='date', y='value'))
 
 table = dash_table.DataTable(
   data=df.to_dict('records'),
