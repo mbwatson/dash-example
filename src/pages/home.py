@@ -1,3 +1,4 @@
+import dash
 from dash import dcc, html
 import dash_mantine_components as dmc
 
@@ -7,7 +8,7 @@ layout = dmc.Container(
   [
     header,
     html.Hr(),
-    dcc.Markdown("""
+    dcc.Markdown('''
       Ullamco anim ea ea aliquip cupidatat aliqua culpa laborum ea veniam
       culpa commodo veniam esse labore.
 
@@ -17,7 +18,9 @@ layout = dmc.Container(
       minim. Ut nulla ullamco consectetur cupidatat labore ut laborum
       eiusmod amet esse officia sit commodo magna ea excepteur pariatur.
       Labore non consequat deserunt proident laborum consectetur eu anim ut
-      non incididunt laborum."""),
+      non incididunt laborum.'''),
   ],
   fluid=True
 )
+
+dash.register_page('home', layout=layout, path='/')

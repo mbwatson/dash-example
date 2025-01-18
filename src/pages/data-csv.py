@@ -1,3 +1,4 @@
+import dash
 from dash import Dash, callback, dash_table, dcc, html, Input, Output
 import dash_mantine_components as dmc
 import pandas as pd
@@ -39,3 +40,5 @@ def sync_table(relayout_data):
   
   filtered_df = df[(x_start <= df['date']) & (df['date'] <= x_end)]
   return filtered_df.to_dict('records')
+
+dash.register_page("data-csv", layout=layout, path="/data-csv")
