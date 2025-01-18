@@ -7,10 +7,9 @@ from src.theme import DEFAULT_THEME
 _dash_renderer._set_react_version('18.2.0')
 
 app = Dash(
-  __name__,
   external_stylesheets=dmc.styles.ALL,
   use_pages=True,
-  pages_folder='src/pages'
+  pages_folder='src/pages',
 )
 
 app.title = 'Dash Dashboard'

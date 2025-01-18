@@ -15,4 +15,4 @@ layout = html.Div([
   'Coming soon...',
 ])
 
-dash.register_page("data_parquet", layout=layout, path="/data_parquet")
+dash.register_page('data_parquet', layout=layout, path='/data_parquet')

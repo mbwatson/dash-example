@@ -5,10 +5,9 @@ from src.components.theme_toggle import theme_toggle
 
 nav_items = [
   {'label': 'Home', 'href': '/'},
+  {'label': 'Clientside Callback', 'href': '/clientside-callback'},
   {'label': 'Data CSV', 'href': '/data-csv'},
   {'label': 'Data Parquet', 'href': '/data-parquet'},
-  {'label': 'About', 'href': '/about'},
-  {'label': 'Contact', 'href': '/contact'},
 ]
 
 def nav_link(label, href):
