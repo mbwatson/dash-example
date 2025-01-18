@@ -19,7 +19,17 @@ table = dash_table.DataTable(
   data=df.to_dict('records'),
   page_size=20,
   id='data-table',
-  columns=[{'name': col, 'id': col} for col in df.columns]
+  columns=[{'name': col, 'id': col} for col in df.columns],
+  style_header={
+    'color': 'var(--color-container-fg)',
+    'backgroundColor': 'var(--color-container-bg)',
+    'fontWeight': 'bold',
+  },
+  style_data={
+    'color': 'var(--color-container-fg)',
+    'backgroundColor': 'var(--color-container-bg)',
+    'fontSize': '80%',
+  },
 )
 
 layout = html.Div([
