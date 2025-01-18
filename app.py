@@ -5,14 +5,14 @@ from src.pages import home, about, contact, data_csv, data_parquet, not_found
 from src.components.layout import layout
 from src.theme import DEFAULT_THEME
 
-_dash_renderer._set_react_version("18.2.0")
+_dash_renderer._set_react_version('18.2.0')
 
-app = Dash(external_stylesheets=dmc.styles.ALL)
+app = Dash(__name__, external_stylesheets=dmc.styles.ALL)
 
 app.title = 'Dash Dashboard'
 app.layout = dmc.MantineProvider(
   theme=DEFAULT_THEME,
-  id="mantine-provider",
+  id='mantine-provider',
   children=layout,
 )
 
@@ -37,5 +37,5 @@ def display_page(pathname):
   else:
     return not_found.layout
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   app.run_server(debug=True)

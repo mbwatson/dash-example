@@ -149,12 +149,12 @@
         },
         "dash-bootstrap-components": {
             "hashes": [
-                "sha256:33c76777e0359637e273ae10fba5f88644f3f4e6cd461b44bc9ad212632e28c4",
-                "sha256:9361f8ee4ba5e0a1d4d5785da3d9f12ba478cc54b5d8f8792a176a49b46feb2f"
+                "sha256:30d48340d6dc89831d6c06e400cd4236f0d5363562c05b2a922f21545695a082",
+                "sha256:5e8eae7ee1d013f69e272c68c1015b53ab71802460152088f33fffa90d245199"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.9' and python_version < '4'",
-            "version": "==1.7.0"
+            "version": "==1.7.1"
         },
         "dash-core-components": {
             "hashes": [

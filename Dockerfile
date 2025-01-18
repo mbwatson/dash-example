@@ -2,10 +2,11 @@ FROM python:3.14.0a4-slim-bookworm
 
 WORKDIR /app
 
+# install dependencies
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
-# Copy the rest of the codebase into the image
+# copy in remaining code
 COPY . ./
 
 EXPOSE 8050
