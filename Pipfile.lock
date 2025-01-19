@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "733fdf6e77a27b5bce00f6691d25869b0cf6969ae89e28cf288dc16cbfbf8547"
+            "sha256": "fbc427abd96c7cd3e0d168ed84500eb5d11b9d403d47ff6120fc4bbbb2a0129a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -146,6 +146,15 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==2.18.2"
+        },
+        "dash-ag-grid": {
+            "hashes": [
+                "sha256:8f609601d25225a53130d5a2da1f43c685dc640c777a7de80bbaa070ded3d19c",
+                "sha256:a174c00b816d03a969c5af61a60f8f6b61af5a9b7058633c86424db99e62875b"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.6'",
+            "version": "==31.3.0"
         },
         "dash-bootstrap-components": {
             "hashes": [

@@ -8,6 +8,7 @@ dash = "*"
 dash-bootstrap-components = "*"
 dash-mantine-components = "*"
 dash-iconify = "*"
+dash-ag-grid = "*"
 
 [dev-packages]
 

@@ -3,6 +3,7 @@ from dash import Dash, callback, dash_table, dcc, html, Input, Output
 import dash_mantine_components as dmc
 import pandas as pd
 import plotly.express as px
+import dash_ag_grid as dag
 
 # used for reading and for showing in ui
 filename = 'data-goldstandard/rsvnet_hospitalization_us_only.csv'
@@ -10,6 +11,8 @@ filename = 'data-goldstandard/rsvnet_hospitalization_us_only.csv'
 # load data
 df = pd.read_csv(f'./data/{filename}')
 df['date'] = pd.to_datetime(df['date']) # ensure 'date' is in datetime format
+
+### chart
 
 # template themes dict for toggling to match app color scheme
 templates = {
@@ -30,27 +33,24 @@ chart = dcc.Graph(
   },
 )
 
-table = dash_table.DataTable(
-  data=df.to_dict('records'),
-  page_size=20,
-  id='data-table',
-  columns=[{'name': col, 'id': col} for col in df.columns],
-  style_header={
-    'color': 'var(--color-container-fg)',
-    'backgroundColor': 'var(--color-container-bg)',
-    'fontWeight': 'bold',
-  },
-  style_data={
-    'color': 'var(--color-container-fg)',
-    'backgroundColor': 'var(--color-container-bg)',
-    'fontSize': '80%',
-  },
+### data table
+
+grid = dag.AgGrid(
+  id="csv-data-grid",
+  rowData=df.to_dict("records"),
+  columnDefs=[{"field": i, 'filter': True} for i in df.columns],
+  columnSize="sizeToFit",
+  dashGridOptions={'pagination': True},
 )
+
+### layout
 
 layout = html.Div([
   html.H1('Data CSV'),
-  dmc.Stack([chart, table])
+  dmc.Stack([chart, grid])
 ])
+
+## callbacks
 
 # match chart colors to app color scheme setting
 @callback(
@@ -62,7 +62,7 @@ def align_chart_theme(theme):
 
 # sync data in data table with that of chart
 @callback(
-  Output('data-table', 'data'),
+  Output('csv-data-grid', 'rowData'),
   Input('csv-chart', 'relayoutData')
 )
 def sync_table(relayout_data):
