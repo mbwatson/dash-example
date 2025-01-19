@@ -3,8 +3,3 @@
     margin-top: 0;
   }
 }
-
-.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner table {
-  --hover: color-mix(in oklab, transparent, var( --mantine-primary-color-5) 25%) !important;
-  cursor: default;
-}
