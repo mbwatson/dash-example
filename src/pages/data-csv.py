@@ -35,8 +35,12 @@ chart = dcc.Graph(
 
 ### data table
 
+def grid_class(theme = 'light'):
+  return 'ag-theme-quartz' if theme == 'light' else 'ag-theme-quartz-dark'
+
 grid = dag.AgGrid(
   id="csv-data-grid",
+  className=grid_class(),
   rowData=df.to_dict("records"),
   columnDefs=[{"field": i, 'filter': True} for i in df.columns],
   columnSize="sizeToFit",
@@ -52,13 +56,14 @@ layout = html.Div([
 
 ## callbacks
 
-# match chart colors to app color scheme setting
+# match chart and table colors to current color scheme setting
 @callback(
   Output('csv-chart', 'figure'),
+  Output('csv-data-grid', 'className'),
   Input('theme-store', 'data'),
 )
 def align_chart_theme(theme):
-  return themed_figure(theme)
+  return themed_figure(theme), grid_class(theme)
 
 # sync data in data table with that of chart
 @callback(
