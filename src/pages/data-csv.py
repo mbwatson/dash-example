@@ -4,15 +4,30 @@ import dash_mantine_components as dmc
 import pandas as pd
 import plotly.express as px
 
+# used for reading and for showing in ui
 filename = 'data-goldstandard/rsvnet_hospitalization_us_only.csv'
-df = pd.read_csv(f'./data/{filename}')
-df['date'] = pd.to_datetime(df['date'])  # ensure 'date' is in datetime format
 
-header = html.H1('Data CSV')
+# load data
+df = pd.read_csv(f'./data/{filename}')
+df['date'] = pd.to_datetime(df['date']) # ensure 'date' is in datetime format
+
+# template themes dict for toggling to match app color scheme
+templates = {
+  'light': 'plotly_white',
+  'dark': 'plotly_dark',
+}
+
+def themed_figure(theme = 'light'):
+  return px.scatter(df, x='date', y='value', title=filename, template=templates[theme])
 
 chart = dcc.Graph(
-  id='chart',
-  figure=px.histogram(df, x='date', y='value', title=filename)
+  id='csv-chart',
+  className='figure',
+  figure=themed_figure(),
+  config={
+    'modeBarButtonsToRemove': ['select', 'lasso2d'],
+    'displaylogo': False,
+  },
 )
 
 table = dash_table.DataTable(
@@ -33,13 +48,22 @@ table = dash_table.DataTable(
 )
 
 layout = html.Div([
-  header,
+  html.H1('Data CSV'),
   dmc.Stack([chart, table])
 ])
 
+# match chart colors to app color scheme setting
+@callback(
+  Output('csv-chart', 'figure'),
+  Input('theme-store', 'data'),
+)
+def align_chart_theme(theme):
+  return themed_figure(theme)
+
+# sync data in data table with that of chart
 @callback(
   Output('data-table', 'data'),
-  Input('chart', 'relayoutData')
+  Input('csv-chart', 'relayoutData')
 )
 def sync_table(relayout_data):
   if not relayout_data or 'xaxis.range[0]' not in relayout_data:
